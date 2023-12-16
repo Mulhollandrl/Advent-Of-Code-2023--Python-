@@ -6,16 +6,16 @@ class Day1:
         self.FILE_PATH = file_path
                 
     def get_first_last_digits(self, string, spelled=False):
-        if spelled:
-            # print(string, end="")
-            for i, character in enumerate(string):
+        numbers = []
+        
+        for i, char in enumerate(string):
+            if char.isdigit():
+                numbers.append(char)
+            
+            if spelled:
                 for word, value in SPELLED_OUT_NUMBERS.items():
                     if string[i:].startswith(word):
-                        string = string.replace(word, str(value), 1)
-            print(string, end="")
-            
-        numbers = [int(i) for i in re.findall(r'\d+', string)]
-        print(numbers)
+                        numbers.append(value)
         
         first = [int(digit) for digit in str(numbers[0])][0]
         last = [int(digit) for digit in str(numbers[-1])][-1]
