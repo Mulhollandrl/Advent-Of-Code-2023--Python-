@@ -1,8 +1,7 @@
-import re
 from enums import SPELLED_OUT_NUMBERS
 
 class Day1:
-    def __init__(self, file_path = "c:/Users/Richard/csPersonal/AoC23 Py/Day 1/data/day1part1_input.csv") -> None:
+    def __init__(self, file_path = "./Day 1/data/day1part1_input.csv") -> None:
         self.FILE_PATH = file_path
                 
     def get_first_last_digits(self, string, spelled=False):
@@ -43,7 +42,6 @@ class Day1:
 if __name__ == "__main__":
     day1 = Day1()
     output1 = day1.day1part1()
-    day1 = Day1()
     output2 = day1.day1part2()
             
     print(f"Your output1 Sire:\n{output1}")
